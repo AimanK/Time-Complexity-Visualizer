@@ -1,98 +1,125 @@
-# Time-Complexity-Visualizer
-An algorithmic time complexity data visualization tool, for coders by coders
+Sure, here's the properly formatted README in Markdown:
 
-# Algorithm Visualizer: System Design & Starting Point
-High-Level Architecture
-Frontend:
+---
 
-# Technologies: TypeScript, React, D3.js
-Responsibilities: User interface, algorithm visualization, step-by-step execution, customizable input data.
-Backend:
+# Time Complexity Visualizer
 
-Technologies: Node.js
-Responsibilities: Handle algorithm logic, process requests from the frontend, manage data storage if needed.
-Data Flow:
+Welcome to the Time Complexity Visualizer! This application allows users to input code snippets in various modern programming languages and receive an analysis of the worst-case algorithmic time complexity. The results are visually represented on the frontend using line graphs.
 
-User Interaction: Users interact with the frontend to select algorithms and input data.
-Request Processing: The frontend sends requests to the backend to run selected algorithms.
-Algorithm Execution: The backend executes the algorithms and sends the results/steps back to the frontend.
-Visualization: The frontend uses D3.js to create visualizations based on the backend data.
-Detailed Component Design
-Frontend:
+## Table of Contents
 
-# React Components:
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Integration](#api-integration)
+- [Contributing](#contributing)
+- [License](#license)
 
-AlgorithmSelector: Dropdown to select the algorithm (e.g., QuickSort, MergeSort, Dijkstra, A).
-InputDataForm: Form to input custom data.
-Visualizer: Component to display the algorithm's visualization using D3.js.
-StepControls: Controls to step through the algorithm execution.
-ExplanationPane: Pane to show step-by-step explanations.
-D3.js Visualization:
+## Features
 
-# Sorting Algorithms Visualization: Bars or nodes to represent elements, with animations to show sorting steps.
-# Graph Algorithms Visualization: Nodes and edges to represent graphs, with animations to show pathfinding or traversal.
-Backend:
+- Input code snippets in various modern programming languages.
+- Analyze the worst-case algorithmic time complexity of the code.
+- Visual representation of the time complexity using line graphs.
+- Responsive and user-friendly UI.
 
-# API Endpoints (Node.js):
+## Tech Stack
 
-/executeAlgorithm: Endpoint to receive algorithm type and input data, then execute the algorithm and return steps.
-/getAlgorithmInfo: Endpoint to retrieve information about the algorithm (e.g., time complexity, steps).
-Algorithm Implementations:
+### Frontend
 
-Sorting Algorithms: Implement QuickSort, MergeSort, etc.
-Graph Algorithms: Implement Dijkstra, A, BFS, DFS.
-Pathfinding Algorithms: Implement A, BFS, DFS.
-Starting Point Approach
-Step 1: Initial Setup
+- **React**: JavaScript library for building user interfaces.
+- **D3.js**: JavaScript library for producing dynamic, interactive data visualizations.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Axios.js**: Promise-based HTTP client for making requests to the backend.
 
-# Frontend:
+### Backend
 
-Set up a new React project with TypeScript.
-Install and configure D3.js for visualizations.
-Backend:
+- **Actix Web**: Powerful, pragmatic, and extremely fast web framework for Rust.
+- **Rust**: Programming language for system-level performance.
+- **ChatGPT API**: For analyzing code snippets and determining their time complexity.
 
-Set up a new Node.js project.
-Install necessary dependencies (Express.js for API, algorithms library if available).
-Step 2: Basic UI and API
+## Installation
 
-# Frontend:
+### Prerequisites
 
-Create basic UI components (AlgorithmSelector, InputDataForm, Visualizer).
-Implement a simple layout with placeholders.
-Backend:
+- [Node.js](https://nodejs.org/) (for running the frontend)
+- [Rust](https://www.rust-lang.org/) (for running the backend)
+- [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) (Rust package manager)
+- [npm](https://www.npmjs.com/get-npm) or [yarn](https://yarnpkg.com/) (JavaScript package manager)
 
-Create basic API endpoints.
-Implement a simple algorithm (e.g., BubbleSort) and return mock data.
-Step 3: Visualization Implementation
+### Frontend Setup
 
-Frontend:
-Implement the visualizer component using D3.js.
-Create a simple bar chart for sorting algorithms.
-Implement animations for sorting steps.
-Step 4: Algorithm Execution Logic
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/code-complexity-analyzer.git
+    cd code-complexity-analyzer
+    ```
 
-Backend:
-Implement sorting algorithms (QuickSort, MergeSort).
-Ensure the backend sends step-by-step data to the frontend.
-Step 5: Integration and Interaction
+2. Navigate to the `frontend` directory and install dependencies:
+    ```bash
+    cd frontend
+    npm install
+    # or
+    yarn install
+    ```
 
-# Frontend:
-Integrate the frontend with the backend.
-Implement step-by-step controls and visual updates.
-Add an explanation pane for step-by-step explanations.
-Step 6: Graph and Pathfinding Algorithms
+3. Start the React development server:
+    ```bash
+    npm start
+    # or
+    yarn start
+    ```
 
-# Backend:
+### Backend Setup
 
-Implement graph algorithms (Dijkstra, A).
-Implement pathfinding algorithms (A*, BFS, DFS).
-Frontend:
+1. Navigate to the `backend` directory and build the project:
+    ```bash
+    cd backend
+    cargo build
+    ```
 
-Create visualizations for graph algorithms (nodes and edges).
-Implement animations for traversal and pathfinding steps.
-Future Enhancements
-Customization: Allow users to customize visualization styles and parameters.
-Complexity Analysis: Show time complexity analysis in real-time.
-User Accounts: Implement user accounts to save and share visualizations.
-Advanced Algorithms: Add more complex algorithms and visualizations.
-With this approach, you'll have a solid foundation to build and expand your Algorithm Visualizer. Let me know if you need any specific code snippets or further assistance! 🧑‍💻🔍👾
+2. Start the Actix Web server:
+    ```bash
+    cargo run
+    ```
+
+## Usage
+
+1. Start both the frontend and backend servers as described in the installation steps.
+2. Open your web browser and navigate to `http://localhost:3000` to access the frontend.
+3. Input your code snippet into the provided text box and click the "Analyze" button.
+4. View the results of the worst-case algorithmic time complexity analysis in graphical form.
+
+## API Integration
+
+To analyze the code snippets, the backend communicates with the ChatGPT API. Ensure you have an API key from OpenAI and set it up in your backend configuration.
+
+1. Obtain your API key from [OpenAI](https://beta.openai.com/signup/).
+2. Add your API key to the backend configuration (e.g., as an environment variable).
+
+Example configuration:
+
+```sh
+export OPENAI_API_KEY='your-api-key'
+```
+
+## Contributing
+
+We welcome contributions to improve the Code Complexity Analyzer! To contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -am 'Add new feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Create a new Pull Request.
+
+Please ensure your code follows the project's coding standards and includes appropriate tests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to replace placeholders like `your-username` and any specific details according to your project. This README provides a solid foundation and clear instructions for anyone who wants to understand, use, or contribute to your project.
