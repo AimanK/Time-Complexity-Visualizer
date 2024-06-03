@@ -1,4 +1,3 @@
-Sure, here's the properly formatted README in Markdown:
 
 ---
 
@@ -121,5 +120,3 @@ Please ensure your code follows the project's coding standards and includes appr
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-
-Feel free to replace placeholders like `your-username` and any specific details according to your project. This README provides a solid foundation and clear instructions for anyone who wants to understand, use, or contribute to your project.
